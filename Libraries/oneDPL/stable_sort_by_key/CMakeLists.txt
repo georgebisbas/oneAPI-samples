@@ -1,4 +1,5 @@
-set(CMAKE_CXX_COMPILER "dpcpp")
+set(CMAKE_CXX_COMPILER "icpx")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsycl")
 # Set default build type to RelWithDebInfo if not specified
 if (NOT CMAKE_BUILD_TYPE)
     message (STATUS "Default CMAKE_BUILD_TYPE not set using Release with Debug Info")
@@ -7,6 +8,6 @@ if (NOT CMAKE_BUILD_TYPE)
         FORCE)
 endif()
 
-cmake_minimum_required (VERSION 3.0)
+cmake_minimum_required (VERSION 3.4)
 project(stable_sort_by_key LANGUAGES CXX)
 add_subdirectory (src)

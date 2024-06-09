@@ -1,100 +1,156 @@
-# Intel oneAPI Toolkit Samples
+# oneAPI Samples
 
-The oneAPI-samples repository provides code samples for Intel oneAPI toolkits.
+The oneAPI-samples repository contains samples for the [Intel® oneAPI Toolkits](https://www.intel.com/content/www/us/en/developer/tools/oneapi/toolkits.html).
 
-We recommend checking out a specific release version of the repository.
-[View available releases](https://github.com/oneapi-src/oneAPI-samples/tags).
+The contents of the default branch in this repository are meant to be used with the most recent released version of the Intel® oneAPI Toolkits.
 
-The latest versions of code samples on the master branch are not guaranteed to
-be stable.
+## Find oneAPI Samples
 
-## Code Samples
+You can find samples by browsing the *[oneAPI Samples Catalog](https://oneapi-src.github.io/oneAPI-samples/)*. Using the catalog you can search on the sample titles or descriptions.
 
-|Code Sample    |Supported Intel(r)   Architecture(s)    	|Description 	|
-|-----------------------|-------------------------------------------|---------------|
-|DirectPrograming/ |
-|../DPC++/CombinationalLogic/mandelbrot 	|GPU, CPU  	|Example of a fractal in   mathematics 	|
-|../DPC++/CombinationalLogic/sepia-filter    	|GPU, CPU  	|Color image conversion using 1D   range    	|
-|../DPC++/DenseLinearAlgebra/complex_mult    	|GPU, CPU  	|Complex number Multiplication    	|
-|../DPC++/DenseLinearAlgebra/matrix_mul 	|GPU, CPU  	|Simple program that multiplies   two large matrices in parallel using DPC++, OpenMP and MKL  	|
-|../DPC++/DenseLinearAlgebra/simple-add 	|FPGA, GPU, CPU 	|Simple Add program	|
-|../DPC++/DenseLinearAlgebra/vector-add 	|FPGA, GPU, CPU 	|Simple Vector add program   	|
-|../DPC++/GraphTraversal/bitonic-sort   	|GPU, CPU  	|Implementation of bitonic sort   using DPC++.   	|
-|../DPC++/ParallelPatterns/Dpc_reduce   	|GPU, CPU  	|A simple program that calculates   pi,  implemented using C++ and DPC++. 	|
-|../DPC++/SpectralMethods/Discrete-cosine-transform    	|GPU, CPU  	|Image processing algorithm used   in JPEG compression	|
-|../DPC++/StructuredGrids/1d_HeatTransfer    	|GPU, CPU  	|A simulation of one dimensional   heat transfer process using DPC++.	|
-|../DPC++/StructuredGrids/ISO2DFD_DPCPP 	|GPU, CPU  	|A simple finite difference   stencil kernel for solving 2D acoustic isotropic wave equation using DPC++	|
-|../DPC++/StructuredGrids/ISO3DFD_DPCPP 	|GPU, CPU  	|A finite difference stencil   kernel for solving 3D acoustic isotropic wave equation using DPC++  	|
-|../DPC++/StructuredGrids/Particle-diffusion 	|GPU, CPU  	|A simple implementation of a   Monte Carlo simulation of the diffusion of water molecules in tissue    	|
-|../DPC++FPGA/ReferenceDesigns/gzip                 |FPGA |High-performance GZIP compression using DPC++ on FPGA |
-|../DPC++FPGA/ReferenceDesigns/db                   |FPGA |High-performance database query acceleration for FPGA-attached memory using DPC++ |
-|../DPC++FPGA/ReferenceDesigns/qrd                  |FPGA |High-performance QR decomposition of matrices using DPC++ on FPGA |
-|../DPC++FPGA/ReferenceDesigns/crr                  |FPGA |High-performance CRR binomial tree option pricing model using DPC++ on FPGA |
-|../DPC++FPGA/Tutorials/                            |
-|...../GettingStarted/fpga_compile                  |FPGA |Tutorial introducing how to compile DPC++ for FPGA |
-|...../GettingStarted/fast_recompile                |FPGA |Tutorial introducing host-only recompile to save DPC++ development time on FPGA |
-|...../Tools/use_library                            |FPGA |Tutorial showing how to use cross-language libraries in DPC++ on FPGA |
-|...../Tools/system_profiling                       |FPGA |Tutorial showing how to use the OpenCL Intercept Layer to profile DPC++ designs running on FPGA at the system level |
-|...../Tools/dynamic_profiler                       |FPGA |Tutorial showing how to use the Intel® FPGA Dynamic Profiler for DPC++ for detailed FPGA kernel profiling|
-|...../DesignPatterns/buffered_host_streaming       |FPGA |Tutorial demonstrating how to create a high-performance full system CPU-FPGA design using SYCL USM. |
-|...../DesignPatterns/double_buffering              |FPGA |Tutorial demonstrating how to overlap kernel execution with buffer transfers and host processing |
-|...../DesignPatterns/n_way_buffering               |FPGA |Tutorial demonstrating how to extend double buffering to n-way buffering |
-|...../DesignPatterns/zero_copy_data_transfer       |FPGA |Tutorial demonstrating how to use zero-copy host-device memory transfer for FPGA kernels with no temporal data reuse  |
-|...../DesignPatterns/onchip_memory_cache           |FPGA |Tutorial explaining the caching of on-chip memory to reduce loop initiation interval on FPGA |
-|...../DesignPatterns/optimize_inner_loop           |FPGA |Tutorial explaining how to optimize the throughput of an inner loop with a low trip count |
-|...../DesignPatterns/carried_dependency            |FPGA |Tutorial explaining a technique to optimize performance by removing loop carried dependencies |
-|...../DesignPatterns/triangular_loop               |FPGA |Tutorial explaining an advanced FPGA optimization technique for triangular loops |
-|...../DesignPatterns/shannonization                |FPGA |Tutorial explaining an optimization for removing computation from the critical path |
-|...../DesignPatterns/pipe_array                    |FPGA |Tutorial showing how to create an array of pipes  |
-|...../DesignPatterns/compute_units                 |FPGA |Tutorial showing how to efficiently make multiple copies of a kernel, called compute units |
-|...../DesignPatterns/simple_host_streaming         |FPGA |Tutorial showing how to use SYCL Universal Shared Memory (USM) to stream data between the host and FPGA device and achieve low latency while maintaining throughput. |
-|...../DesignPatterns/explicit_data_movement        |FPGA |Tutorial showing an alternative coding (explicit USM) in which data movement between host and device is controlled explicitly in code |
-|...../Features/fpga_reg                            |FPGA |Tutorial demonstrating the use of the DPC++ FPGA power user extension intel::fpga_reg |
-|...../Features/kernel_args_restrict                |FPGA |Tutorial demonstrating how to avoid performance penalties due to kernel argument aliasing |
-|...../Features/loop_coalesce                       |FPGA |Tutorial demonstrating the DPC++ FPGA loop_coalesce attribute |
-|...../Features/loop_ivdep                          |FPGA |Tutorial demonstrating the use of the loop ivdep attribute |
-|...../Features/loop_unroll                         |FPGA |Tutorial demonstrating the DPC++ unroll pragma and its performance trade-offs on FPGA |
-|...../Features/lsu_control                         |FPGA |Tutorial demonstrating how to configure the load-store units (LSUs) in your DPC++ program for FPGA |
-|...../Features/max_concurrency                     |FPGA |Tutorial demonstrating the DPC++ FPGA max_concurrency attribute |
-|...../Features/max_interleaving                    |FPGA |Tutorial demonstrating the DPC++ FPGA max_interleaving attribute |
-|...../Features/memory_attributes                   |FPGA |Tutorial demonstrating how to use DPC++ FPGA memory attributes |
-|...../Features/pipes                               |FPGA |Tutorial demonstrating the DPC++ FPGA pipes extension to transfer data between kernels |
-|...../Features/speculated_iterations               |FPGA |Tutorial demonstrating the DPC++ FPGA speculated_iterations attribute |
-|../C++/CombinationalLogic/Mandelbrot   	|CPU  	|Demonstrates how to accelerate   Mandelbrot performance with SIMD and parallelization using OpenMP*.   	|
-|../C++/CompilerInfrastructure/Intrinsics    	|CPU  	|Shows how to utilize the   intrinsics supported by C++ compiler in a variety of applications.	|
-|../C++/GraphTraversal/Mergesort   	|CPU  	|Shows how to accelerate scalar   merge sort program using OpenMP tasks   	|
-|Libraries |
-|../oneDPL/Gamma-correction 	|GPU, CPU  	|gamma correction using Parallel   STL 	|
-|../oneDPL/Stable_sort_by_key    	|GPU, CPU  	|stable sort by key using   counting_iterator and zip_iterator  	|
-|../oneVPL/hello-decode	|CPU  	|shows how to use oneVPL to   perform a simple video decode	|
-|../oneVPL/hello-encode	|CPU  	|shows how to use oneVPL to   perform a simple video encode	|
-|Tools |
-|../ApplicationDebugger/Debugger/array-transform    	|GPU, CPU  	|Array transform   	|
-|../IoTConnectionTools/Analog-in	|CPU  	|Analog   pin input example using Eclipse* MRAA  	|
-|../IoTConnectionTools/Digital   In  	|CPU  	|GPIO   pin input example using Eclipse* MRAA    	|
-|../IoTConnectionTools/Digital   Out 	|CPU  	|GPIO   pin output example using Eclipse* MRAA   	|
-|../IoTConnectionTools/Hello   IoT World  	|CPU  	|Basic   example that prints the compiler used during build	|
-|../IoTConnectionTools/Interrupt	|CPU  	|Interrupt   Service Routine example using Eclipse* MRAA   	|
-|../IoTConnectionTools/Onboard   Blink    	|CPU  	|Built-in   LED blink for common IoT boards using Eclipse* MRAA 	|
-|../IoTConnectionTools/PWM 	|CPU  	|Pulse   Width Modulation pin output using Eclipse* MRAA   	|
-|../IoTConnectionTools/Up2   LEDs    	|CPU  	|Built-in   LED example for UP* Squared using Eclipse* MRAA	|
+You can refine your browsing or searching through filtering on the following:
 
-## License
+- Expertise (Getting Started, Tutorial, etc.)
+- Programming language (C++, Python, or Fortran)
+- Target device (CPU GPU, and FPGA)
 
-Code samples are licensed under the MIT license. See
-[License.txt](https://github.com/oneapi-src/oneAPI-samples/blob/master/License.txt) for details.
+## Get the oneAPI Samples
 
-Third party program Licenses can be found here: [third-party-programs.txt](https://github.com/oneapi-src/oneAPI-samples/blob/master/third-party-programs.txt)
+Clone the repository by entering the following command:
 
-## Known Issues or Limitations
+`git clone https://github.com/oneapi-src/oneAPI-samples.git`
 
-### On Windows Platform
-- If you are using Visual Studio 2019, Visual Studio 2019 version 16.4.0 or newer is required.
-- Windows support for the FPGA code samples is limited to the FPGA emulator and optimization reports. Compile targets for FPGA hardware are provided on Linux only. See any FPGA code sample for more details.
-- If you encounter a compilation error when building a sample program, such as the example error below, the directory path of the sample may be too long. The work around is to move the sample to a directory such as "c:\temp\sample_name".
-    - Example error: *Error MSB6003 The specified task executable "dpcpp.exe" could not be run .......*
+Alternatively, you can download a zip file containing the primary branch in repository.
 
-## Contribute
+1. Click the **Code** button.
+2. Select **Download ZIP** from the menu options.
+3. After downloading the file, unzip the repository contents.
 
-See [CONTRIBUTING](https://github.com/oneapi-src/oneAPI-samples/blob/master/CONTRIBUTING.md)
-for more information.
+### Get Earlier Versions of the oneAPI Samples
+
+If you need samples for an earlier version of any of the Intel® oneAPI Toolkits, then use a [tagged version](https://github.com/oneapi-src/oneAPI-samples/tags) of the repository that corresponds with the toolkit version.
+
+Clone an earlier version of the repository using Git by entering a command similar to the following:
+
+`git clone -b <tag> https://github.com/oneapi-src/oneAPI-samples.git`
+
+where `<tag>` is the GitHub tag corresponding to the toolkit version number, like **2024.1.0**.
+
+Alternatively, you can download a zip file containing a specific tagged version of the repository.
+
+1. Select the appropriate tag.
+2. Click the **Code** button.
+3. Select **Download ZIP** from the menu options.
+4. After downloading the file, unzip the repository contents.
+
+## Getting Started with oneAPI Samples
+
+The best oneAPI sample to start with depends on what you are trying to learn or types of problems you are trying to solve.
+
+| If you want to learn about...                                                        | Start with...
+|:---                                                                                  |:---
+| the basics of writing, compiling, and building programs for CPUs, GPUs, or FPGAs     |[Simple Add](https://github.com/oneapi-src/oneAPI-samples/tree/master/DirectProgramming/C++SYCL/DenseLinearAlgebra/simple-add) or [Vector Add](https://github.com/oneapi-src/oneAPI-samples/tree/master/DirectProgramming/C++SYCL/DenseLinearAlgebra/vector-add) samples <br> (You can use these samples as starter projects by removing unwanted elements and adding your code and build requirements.)
+| the basics of using artificial intelligence                                          | [Getting Started Samples for AI Tools](https://github.com/oneapi-src/oneAPI-samples/tree/master/AI-and-Analytics/Getting-Started-Samples)
+| the basics of image rendering workloads and ray tracing                              | [Getting Started Samples for Intel® oneAPI Rendering Toolkit (Render Kit)](https://github.com/oneapi-src/oneAPI-samples/tree/master/RenderingToolkit/GettingStarted)
+| how to modify or create build files for SYCL-compliant projects                      | [Vector Add](https://github.com/oneapi-src/oneAPI-samples/tree/master/DirectProgramming/C++SYCL/DenseLinearAlgebra/vector-add) sample
+
+>**Note**: The README.md included with each sample provides build instructions for all supported operating system. For samples run in Jupyter Notebooks, you might need to install or configure additional frameworks or package managers if you do not already have them on your system.
+
+### Using Integrated Development Environments (IDE)
+
+If you prefer to use an Integrated Development Environment (IDE) with these samples, you can download [Visual Studio Code](https://code.visualstudio.com/download) for use on Windows*, Linux*, and macOS*.
+
+## Repository Structure
+
+The oneAPI-sample repository is organized by high-level categories.
+
+- [AI-and-Analytics](https://github.com/oneapi-src/oneAPI-samples/tree/master/AI-and-Analytics)
+  - [End-to-End-Workloads](https://github.com/oneapi-src/oneAPI-samples/tree/master/AI-and-Analytics/End-to-end-Workloads)
+  - [Features-and-Functionality](https://github.com/oneapi-src/oneAPI-samples/tree/master/AI-and-Analytics/Features-and-Functionality)
+  - [Getting-Started-Samples](https://github.com/oneapi-src/oneAPI-samples/tree/master/AI-and-Analytics/Getting-Started-Samples)
+  - [Jupyter](https://github.com/oneapi-src/oneAPI-samples/tree/master/AI-and-Analytics/Jupyter)
+- [DirectProgramming](https://github.com/oneapi-src/oneAPI-samples/tree/master/DirectProgramming)
+  - [C++](https://github.com/oneapi-src/oneAPI-samples/tree/master/DirectProgramming/C++)
+  - [C++SYCL](https://github.com/oneapi-src/oneAPI-samples/tree/master/DirectProgramming/C++SYCL)
+  - [C++SYCL_FPGA](https://github.com/oneapi-src/oneAPI-samples/tree/master/DirectProgramming/C++SYCL_FPGA)
+  - [Fortran](https://github.com/oneapi-src/oneAPI-samples/tree/master/DirectProgramming/Fortran)
+- [Libraries](https://github.com/oneapi-src/oneAPI-samples/tree/master/Libraries)
+- [Publications](https://github.com/oneapi-src/oneAPI-samples/tree/master/Publications)
+- [RenderingToolkit](https://github.com/oneapi-src/oneAPI-samples/tree/master/RenderingToolkit)
+- [Tools](https://github.com/oneapi-src/oneAPI-samples/tree/master/Tools/)
+
+
+## Platform Validation
+
+Samples in this release are validated on the following platforms.
+
+### Ubuntu 22.04
+Intel(R) Xeon(R) Platinum 8352Y CPU @ 2.20GHz \
+Intel(R) OpenCL Graphics, Intel(R) Data Center GPU Max 1550 OpenCL 3.0 (pvc) \
+Opencl driver: Intel(R) FPGA Emulation Platform for OpenCL(TM), Intel(R) FPGA Emulation Device 1.2 [2023.16.10.0.17_160000] \
+Level Zero driver: Intel(R) Level-Zero, Intel(R) Data Center GPU Max 1550 1.3 [1.3.28202] \
+oneAPI package version: \
+&dash; Intel oneAPI Base Toolkit Build Version: 2024.1.0.596 \
+&dash; Intel oneAPI HPC Toolkit Build Version: 2024.1.0.560 \
+&dash; Intel oneAPI Rendering Toolkit Build Version: 2024.1.0.743 \
+&dash; Intel AI Tools 2024.1.0.84
+
+12th Gen Intel(R) Core(TM) i9-12900 \
+Intel(R) UHD Graphics 770 3.0 ; (gen12, AlderLake-S GT1 [8086:4680]) \
+Opencl driver: Intel(R) FPGA Emulation Platform for OpenCL(TM), Intel(R) FPGA Emulation Device OpenCL 1.2 [2024.17.3.0.08_160000] \
+Level Zero driver: Intel(R) Level-Zero, Intel(R) UHD Graphics 770 1.3 [1.3.28202] \
+oneAPI package version: \
+&dash; Intel oneAPI Base Toolkit Build Version: 2024.1.0.596 \
+&dash; Intel oneAPI HPC Toolkit Build Version: 2024.1.0.560 \
+&dash; Intel oneAPI Rendering Toolkit Build Version: 2024.1.0.743 \
+&dash; Intel AI Tools 2024.1.0.84
+
+11th Gen Intel(R) Core(TM) i7-11700 \
+Intel(R) UHD Graphics 750 3.0, (gen12, RocketLake) \
+Opencl driver: Intel(R) FPGA Emulation Platform for OpenCL(TM), Intel(R) FPGA Emulation Device OpenCL 1.2 [2024.17.3.0.08_160000] \
+Level Zero driver: Intel(R) Level-Zero, Intel(R) UHD Graphics 750 1.3 [1.3.28202] \
+oneAPI package version: \
+&dash; Intel oneAPI Base Toolkit Build Version: 2024.1.0.596 \
+&dash; Intel oneAPI HPC Toolkit Build Version: 2024.1.0.560 \
+&dash; Intel oneAPI Rendering Toolkit Build Version: 2024.1.0.743 \
+&dash; Intel AI Tools 2024.1.0.84
+
+### Windows 11
+12th Gen Intel(R) Core(TM) i9-12900 Intel(R) UHD Graphics 770 3.0 ; (gen12, AlderLake-S GT1 [8086:4680]) \
+Opencl driver: Intel(R) FPGA Emulation Platform for OpenCL(TM), Intel(R) FPGA Emulation Device OpenCL 1.2 [2024.17.3.0.08_160000] \
+Level Zero driver: Intel(R) Level-Zero, Intel(R) UHD Graphics 770 1.3 [1.3.28597] \
+oneAPI package version: \
+&dash; Intel oneAPI Base Toolkit Build Version: 2024.1.0.595 \
+&dash; Intel oneAPI HPC Toolkit Build Version: 2024.1.0.561 \
+&dash; Intel oneAPI Rendering Toolkit Build Version: 2024.1.0.745
+
+11th Gen Intel(R) Core(TM) i7-11700
+Intel(R) UHD Graphics 750 3.0, (gen12, RocketLake) \
+Opencl driver: Intel(R) FPGA Emulation Platform for OpenCL(TM), Intel(R) FPGA Emulation Device OpenCL 1.2 [2024.17.3.0.08_160000] \
+Level Zero driver: Intel(R) Level-Zero, Intel(R) UHD Graphics 750 1.3 [1.3.28597] \
+oneAPI package version: \
+&dash; Intel oneAPI Base Toolkit Build Version: 2024.1.0.595 \
+&dash; Intel oneAPI HPC Toolkit Build Version: 2024.1.0.561 \
+&dash; Intel oneAPI Rendering Toolkit Build Version: 2024.1.0.745
+
+### macOS
+Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz \
+&dash; Intel oneAPI Rendering Toolkit Build Version: 2024.1.0.744
+
+## Known Issues and Limitations
+
+### Windows
+
+- If you are using Microsoft Visual Studio* 2019, you must use Microsoft Visual Studio 2019 version 16.4.0 or newer.
+- Windows support for the FPGA code samples is limited to the **FPGA emulator** and **optimization reports**. Only Linux supports **FPGA hardware** compilation. See any FPGA code sample README.md for more details.
+- If you encounter `Error MSB6003 The specified task executable ... could not be run...` when building a sample program, it might be due to the length of the directory path. Move the `build` directory to a location with a shorter path. Build the sample in the new location.
+
+## Licenses
+
+Code samples are licensed under the MIT license. See [License.txt](https://github.com/oneapi-src/oneAPI-samples/blob/master/License.txt) for details.
+
+Third-party program licenses can be found here: [third-party-programs.txt](https://github.com/oneapi-src/oneAPI-samples/blob/master/third-party-programs.txt).
+
+## Notices and Disclaimers
+
+© Intel Corporation. Intel, the Intel logo, and other Intel marks are trademarks of Intel Corporation or its subsidiaries. Other names and brands may be claimed as the property of others.
